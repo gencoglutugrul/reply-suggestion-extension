@@ -1,5 +1,4 @@
 'use strict'
-const myExtId = 'mafngaiefmnpmehjelggjgfinfaoncio'
 
 const loaderId = setInterval(() => {
   if (!window._gmailjs) {
@@ -33,9 +32,8 @@ function startExtension (gmail) {
           body_html: item.content_html
         })
       })
-
       // eslint-disable-next-line no-undef
-      chrome.runtime.sendMessage(myExtId, { emailObjects, url: location.href.toString() }, response => {
+      chrome.runtime.sendMessage(window.messageSuggestionExtensionID, { emailObjects, url: location.href.toString() }, response => {
         if (response.suggestion) {
           document.querySelector('.editable').innerHTML = response.suggestion
         }

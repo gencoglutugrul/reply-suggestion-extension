@@ -32,3 +32,21 @@ chrome.runtime.onMessage.addListener((request, _sender, sendResponse) => {
     sendResponse({ lastState })
   }
 })
+
+// eslint-disable-next-line no-undef
+chrome.tabs.onUpdated.addListener((tabId, _changeInfo, tab) => {
+  if (tab.url) {
+    if (tab.url.match(/^https:\/\/mail.google\.com\/mail\/u\/[0-9]\/#[a-zA-Z]+\//)) {
+      // eslint-disable-next-line no-undef
+      chrome.scripting.executeScript({
+        target: { tabId },
+        func: (extensionID) => {
+          window.messageSuggestionExtensionID = extensionID
+        },
+        // eslint-disable-next-line no-undef
+        args: [chrome.runtime.id],
+        world: 'MAIN'
+      })
+    }
+  }
+})

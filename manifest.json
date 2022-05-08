@@ -1,12 +1,9 @@
 {
     "manifest_version": 3,
-    "name": "GmailJS Node Boilerplate Extension",
-    "short_name": "gmailjsnode",
+    "name": "Suggest Reply",
+    "short_name": "suggest",
     "version": "1.1",
-    "author": "Jostein Kjønigsen <jostein@kjonigsen.net>",
-
-    "description": "A minimal extension which demonstrates how to create a extension with Gmail.JS and NodeJS-based bundling.",
-
+    "author": "Tuğrul Gençoğlu <gencoglutugrul@gmail.com>",
     "content_scripts": [
         {
             "matches": [ "*://mail.google.com/*" ],
