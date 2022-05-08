@@ -16,7 +16,10 @@
             "run_at": "document_start"
         }
     ],
-
+    "background": {"service_worker": "src/background.js"},
+    "action": {
+        "default_popup": "src/popup.html"
+    },
     "web_accessible_resources": [{
         "resources": [
             "dist/gmailJsLoader.js",
@@ -26,5 +29,12 @@
     }],
     "host_permissions": [
         "https://*/*"
+    ],
+    "externally_connectable": {
+        "matches": ["*://mail.google.com/*"]
+    },
+    "permissions": [
+        "activeTab",
+        "scripting"
     ]
 }
