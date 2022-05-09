@@ -1,4 +1,4 @@
-const API_ENDPOINT = 'https://asvv07dztc.execute-api.us-east-2.amazonaws.com/get_suggested_text'
+const API_ENDPOINT = 'https://exampleendpoint.com/get_suggested_text'
 
 let lastState = {}
 
